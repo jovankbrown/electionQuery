@@ -1,8 +1,8 @@
 context('CNN Election Query', () => {
     
     beforeEach(() => {
-        const apikey = Cypress.env('apiKey');
-        cy.request('https://www.googleapis.com/civicinfo/v2/elections?key=' + apikey ).as('electionQuery');
+        const apikey = Cypress.env('apiKey')
+        cy.request('https://www.googleapis.com/civicinfo/v2/elections?key=' + apikey ).as('electionQuery')
     })
 
     describe('API Test', () => {
@@ -10,7 +10,7 @@ context('CNN Election Query', () => {
             cy.get('@electionQuery')
                 .its('headers')
                 .its('content-type')
-                .should('include', 'application/json; charset=UTF-8');
+                .should('include', 'application/json; charset=UTF-8')
         });
 
         it('Validate the status code', () => {
@@ -49,7 +49,7 @@ context('CNN Election Query', () => {
                     ]
                 })
               })
-        });
+        })
     })
   
     
